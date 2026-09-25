@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IK Solver</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/p5.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="content">
+        <h1 style="padding: 10px;">Simple IK Sim</h1>
+        <div class="inputs">
+            <div>
+                <h1>ARM 1</h1>
+                <p>Length (px)</p>
+                <input type="number" id="arm1len" name="arm1len" placeholder="100">
+                <div style="display: flex; flex-direction: row; padding-top: 10px;">
+                    <p>Color</p>
+                    <input type="color" id="arm1color" value="#FFFFFF">
+                </div>
+            </div>
+            <div>
+                <h1>ARM 2</h1>
+                <p>Length (px)</p>
+                <input type="number" id="arm2len" name="arm2len" placeholder="100">
+                <div style="display: flex; flex-direction: row; padding-top: 10px;">
+                    <p>Color</p>
+                    <input type="color" id="arm2color" value="#FFFFFF">
+                </div>
+            </div>    
+            <div>
+                <h1>ARM 3</h1>
+                <p>Length (px)</p>
+                <input type="number" id="arm3len" name="arm3len" placeholder="100">
+                <div style="display: flex; flex-direction: row; padding-top: 10px;">
+                    <p>Color</p>
+                    <input type="color" id="arm3color" value="#FFFFFF">
+                </div>
+            </div>
+        </div>
+        <button id="t_mouse_tracking" name="t_mouse_tracking">Toggle Mouse Tracking</button>
+        <p style="padding: 0px 0px 0px 10px; text-decoration: underline;">Set Target Location (px)</p>
+        <div class="inputs">
+            <div class="entry-slider">
+                <p id="x_title">x | Range(0-100)</p>
+                <input type="number" id="target_x" name="target_x" placeholder="x">
+                <input type="range" id="s_target_x" name="slider_x" min="0" max="1000" value="50" step="1">
+            </div>
+            <div class="entry-slider">
+                <p id="y_title">y | Range(0-100)</p>
+                <input type="number" id="target_y" name="target_y" placeholder="y">
+                <input type="range" id="s_target_y" name="slider_y" min="0" max="1000" value="50" step="1">
+            </div>
+        </div>
+        <div class="inputs">
+            <p>Joint Color</p>
+            <input type="color" id="jointcolor" value="#FFFFFF">
+        </div>
+        <div class="inputs">
+            <p>Max Distance</p>
+            <input type="checkbox" id="md_cb" checked="checked">
+            <p>Reachability Dot</p>
+            <input type="checkbox" id="rd_cb" checked="checked">
+            <p>Joints</p>
+            <input type="checkbox" id="j_cb" checked="checked">
+        </div>
+    </div>
+    <div class="description">
+        <h1>Important things to note</h1>
+        <p>
+            - The mouse cursor outline shows whether the arm is able to reach the desired target location.
+            A green outline means the location is reachable by the arm, and a red outline means that
+            it is not.
+        </p>
+        <p>
+            - Setting target locations: The origin of the coordinate system is fixed at the base of the arm.
+            X spans the entire width of the window, ranging -width / at the left of the origin, to width / 2
+            at the right. Y spans the entire height of the window, ranging from 0 at the origin to the max
+            height of the window.
+        </p>
+        <p>
+            - To disable arm mouse tracking, press 'toggle mouse tracking' or add target input by entering a 
+            real number into the entry or by moving the sliders. 
+        </p>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+</html>
