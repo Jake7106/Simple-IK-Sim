@@ -10,7 +10,7 @@ Features:
 - Each member of the arm is customizable, allowing for changes in individual length and appearance.
 
 - Setting target locations for the arm: The origin of the coordinate system is fixed at the base of the arm.
-X spans the entire width of the window, ranging -width / at the left of the origin, to width / 2
+X spans the entire width of the window, ranging -width / 2 at the left of the origin, to width / 2
 at the right. Y spans the entire height of the window, ranging from 0 at the origin to the max
 height of the window. 
 
@@ -33,7 +33,7 @@ Open `index.html` in your web browser to start the program.
 
 ## Running Locally
 
-The program can also be ran locally using the following methods.
+The program can also be run locally using the following methods.
 
 ```bash
 # Using Python
